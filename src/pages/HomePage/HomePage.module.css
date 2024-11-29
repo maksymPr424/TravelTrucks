@@ -1,0 +1,48 @@
+.container {
+  background-image: url("../../img/Container-1x.jpg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100vh - 50px);
+  position: relative;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .container {
+    background-image: url("../../img/Container-2x.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: calc(100vh - 50px);
+  }
+}
+
+.content {
+  height: calc(100vh - 50px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 40px;
+  color: var(--inputs);
+  font-weight: 600;
+
+  @media screen and (min-width: 768px) {
+    font-size: 48px;
+  }
+}
+
+.text {
+  font-size: 24px;
+  color: var(--inputs);
+  font-weight: 600;
+  margin-top: 10px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    margin-top: 16px;
+  }
+}
+

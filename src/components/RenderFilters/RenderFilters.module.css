@@ -1,0 +1,47 @@
+.filterName {
+  font-size: 20px;
+  position: relative;
+  font-weight: 700;
+}
+
+.filterName::before {
+  position: absolute;
+  content: "";
+  bottom: -24px;
+  width: 100%;
+  left: 0;
+  height: 1px;
+  background-color: var(--gray-light);
+}
+
+.listFilters {
+  margin-top: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  border: 1px solid var(--gray-light);
+  border-radius: 16px;
+  width: 112px;
+  height: 96px;
+  font-weight: 600;
+}
+
+.checkbox:checked + .label {
+  border-color: var(--button-hover);
+}
+
+.icons {
+  fill: var(--main);
+  width: 32px;
+  height: 32px;
+  /* stroke: var(--main); */
+}
