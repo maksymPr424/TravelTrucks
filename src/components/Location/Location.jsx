@@ -6,7 +6,6 @@ import { setLocation } from "../../redux/filters/slice";
 
 export default function Location() {
   const locationFromState = useSelector(selectLocation);
-  console.log(locationFromState);
 
   const dispatch = useDispatch();
 
@@ -33,7 +32,7 @@ export default function Location() {
         >
           {cities.map((item, index) => (
             <option className={css.option} value={item} key={index}>
-              {item || "City"}
+              {item ? `Ukraine, ${item}` : "City"}
             </option>
           ))}
         </select>

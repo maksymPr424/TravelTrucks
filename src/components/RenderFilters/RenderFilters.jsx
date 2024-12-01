@@ -35,7 +35,7 @@ export default function RenderFilters({
               <svg className={css.icons}>
                 <use
                   href={`/sprite.svg#${
-                    item === "Fully Integrated" ? "Fully-Integrated" : item
+                    item === "Fully Integrated" ? "FullyIntegrated" : item
                   }`}
                 ></use>
               </svg>
