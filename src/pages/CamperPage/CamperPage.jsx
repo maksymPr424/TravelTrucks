@@ -60,7 +60,7 @@ export default function CamperPage() {
           reviews={reviews.length}
           location={location}
         />
-        <p className={css.price}>€{price}</p>
+        <p className={css.price}>€{price.toFixed(2)}</p>
       </div>
       <Gallery gallery={gallery} />
       <p className={css.description}>{description}</p>

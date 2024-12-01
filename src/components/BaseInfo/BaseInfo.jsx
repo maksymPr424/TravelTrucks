@@ -22,7 +22,7 @@ export default function BaseInfo({
         <h2 className={css.title}>{title}</h2>
         {!price || (
           <div className={css.priceContainer}>
-            <p className={css.price}>€{price}</p>
+            <p className={css.price}>€{price.toFixed(2)}</p>
             <Button
               styles={css.checkBtn}
               onClick={toggleChoiceCamper}
