@@ -2,7 +2,6 @@ import css from "./ReviewItem.module.css";
 
 export default function ReviewItem({ reviewInfo }) {
   const average = reviewInfo.reviewer_rating;
-  console.log(average);
 
   return (
     <div className={css.container}>

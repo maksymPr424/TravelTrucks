@@ -5,3 +5,5 @@ export const selectCamperById = (state, id) =>
 export const selectCurrentPage = (state) => state.campersReducer.page;
 export const selectIsLoading = (state) => state.campersReducer.isLoading;
 export const selectIsError = (state) => state.campersReducer.isError;
+export const selectCurrentCamper = (state) =>
+  state.campersReducer.currentCamper;

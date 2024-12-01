@@ -1,14 +1,11 @@
 import { useSelector } from "react-redux";
 import Characteristics from "../Characteristics/Characteristics";
 import css from "./Features.module.css";
-import { selectCamperById } from "../../redux/allCampers/selectors";
-import { useParams } from "react-router";
+import { selectCurrentCamper } from "../../redux/allCampers/selectors";
 import Details from "../Details/Details";
 import OrderForm from "../OrderForm/OrderForm";
 
 export default function Features() {
-  const { id } = useParams();
-
   const {
     transmission,
     engine,
@@ -26,7 +23,7 @@ export default function Features() {
     height,
     tank,
     consumption,
-  } = useSelector((state) => selectCamperById(state, id));
+  } = useSelector(selectCurrentCamper);
 
   const detailArray = [
     { form },

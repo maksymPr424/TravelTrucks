@@ -23,7 +23,7 @@ const filterPersistConfig = {
 const campersPersistConfig = {
   key: "campers",
   storage,
-  whitelist: ["campers", "total"],
+  whitelist: ["campers", "total", "currentCamper"],
 };
 
 const choiceCampersPersistConfig = {

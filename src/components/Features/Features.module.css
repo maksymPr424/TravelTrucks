@@ -14,6 +14,7 @@
   padding: 44px 52px;
   max-width: 300px;
   gap: 50px;
+  margin: 0 auto;
 
   @media screen and (min-width: 768px) {
     max-width: 631px;

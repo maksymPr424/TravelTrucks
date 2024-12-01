@@ -5,6 +5,21 @@ const API_URL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io";
 
 axios.defaults.baseURL = API_URL;
 
+export const getCamperById = createAsyncThunk(
+  "campers/getCamperById",
+  async (id, { rejectWithValue }) => {
+    try {
+      const res = await axios(`/campers/${id}`);
+
+      return res.data;
+    } catch (e) {
+      return rejectWithValue(
+        e.message || "An error occurred while fetching camper by id"
+      );
+    }
+  }
+);
+
 export const getCampers = createAsyncThunk(
   "campers/getCampers",
   async (page, { getState, rejectWithValue }) => {

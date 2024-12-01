@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCampers } from "./operations";
+import { getCamperById, getCampers } from "./operations";
 
 const initValues = {
   campers: [],
@@ -7,6 +7,7 @@ const initValues = {
   page: 1,
   isLoading: false,
   isError: false,
+  currentCamper: {},
 };
 
 const campersSlice = createSlice({
@@ -20,6 +21,8 @@ const campersSlice = createSlice({
       })
       .addCase(getCampers.fulfilled, (state, action) => {
         const currentPage = action.payload.page;
+
+        console.log(action.payload);
 
         if (currentPage === 1) {
           state.campers = action.payload.items;
@@ -35,6 +38,19 @@ const campersSlice = createSlice({
         state.campers = [];
         state.total = 0;
         state.page = 1;
+        state.isLoading = false;
+        state.isError = true;
+      })
+      .addCase(getCamperById.pending, (state) => {
+        state.isLoading = true;
+        state.isError = false;
+      })
+      .addCase(getCamperById.fulfilled, (state, action) => {
+        state.currentCamper = action.payload;
+        state.isLoading = false;
+        state.isError = false;
+      })
+      .addCase(getCamperById.rejected, (state) => {
         state.isLoading = false;
         state.isError = true;
       });
