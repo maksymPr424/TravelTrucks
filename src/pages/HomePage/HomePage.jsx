@@ -10,7 +10,7 @@ export default function HomePage() {
           You can find everything you want in our catalog
         </p>
         {/* <NavLink to="/catalog" className={css.linkButton}> */}
-        <Button navigateTo={"/catalog"}>View now</Button>
+        <Button navigateTo={"/catalog"}>View Now</Button>
         {/* </NavLink> */}
       </div>
     </div>
