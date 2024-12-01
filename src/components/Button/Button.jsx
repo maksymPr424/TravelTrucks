@@ -13,7 +13,6 @@ export default function Button({
   const dispatch = useDispatch();
 
   const handleClick = () => {
-
     if (onClick) {
       dispatch(onClick(credentials));
     }

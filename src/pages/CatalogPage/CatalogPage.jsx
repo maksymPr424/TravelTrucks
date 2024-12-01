@@ -120,7 +120,7 @@ export default function CatalogPage() {
               ) : (
                 campersTotal <= currentPage * 5 || (
                   <li>
-                    <Button onClick={getCampers} credentials={currentPage}>
+                    <Button onClick={getCampers} credentials={currentPage} styles={css.button}>
                       Load More
                     </Button>
                   </li>

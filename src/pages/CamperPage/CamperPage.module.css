@@ -1,0 +1,57 @@
+.container {
+  margin-top: 48px;
+}
+
+.price {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 600;
+
+  @media screen and (min-width: 768px) {
+    font-weight: 700;
+    font-size: 24px;
+  }
+}
+
+.description {
+  color: var(--text);
+  margin-top: 24px;
+}
+
+.moreInfoLinks {
+  margin-top: 60px;
+  position: relative;
+}
+
+.moreInfoLinks::before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: var(--gray-light);
+  bottom: -24px;
+}
+
+.link {
+  font-weight: 700;
+  font-size: 20px;
+  position: relative;
+}
+
+.link:not(:last-child) {
+  margin-right: 40px;
+}
+
+.activeRoute::before {
+  position: absolute;
+  content: "";
+  height: 5px;
+  width: 100%;
+  background-color: var(--button);
+  bottom: -26px;
+}
+
+.outlet {
+  margin-top: 68px;
+  margin-bottom: 80px;
+}

@@ -1,3 +1,5 @@
+@import url("react-datepicker/dist/react-datepicker.css");
+
 .container {
   max-width: 375px;
   width: 100%;
@@ -15,4 +17,13 @@
   .container {
     max-width: 1440px;
   }
+}
+
+.react-datepicker__day--selected {
+  background-color: var(--text) !important;
+  border-radius: 50% !important;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
 }

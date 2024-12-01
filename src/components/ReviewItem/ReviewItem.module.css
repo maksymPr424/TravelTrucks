@@ -1,0 +1,45 @@
+.container {
+}
+
+.upInfo {
+  display: flex;
+  align-items: center;
+}
+
+.ratingIcon {
+  width: 16px;
+  height: 16px;
+  fill: var(--badges);
+}
+
+.active {
+  fill: var(--rating);
+}
+
+.name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.ratingContainer {
+  margin-top: 4px;
+}
+
+.photo {
+  color: var(--button);
+  font-size: 24px;
+  font-weight: 700;
+  width: 60px;
+  height: 60px;
+  margin-right: 16px;
+  border-radius: 50%;
+  background-color: var(--badges);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  color: var(--text);
+  margin-top: 16px;
+}

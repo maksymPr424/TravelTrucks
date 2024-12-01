@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 40px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.infoContainer {
+  background-color: var(--inputs);
+  padding: 44px 52px;
+  max-width: 300px;
+  gap: 50px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 631px;
+  }
+  /* min-height: 588px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 18px;
+}

@@ -14,3 +14,7 @@
   border-radius: 18px;
   background-color: var(--badges);
 }
+
+.features {
+  background-color: var(--gray-light);
+}
