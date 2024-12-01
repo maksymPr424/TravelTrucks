@@ -1,7 +1,9 @@
 import css from "./ReviewItem.module.css";
 
 export default function ReviewItem({ reviewInfo }) {
-  const average = reviewInfo.reviewInfo;
+  const average = reviewInfo.reviewer_rating;
+  console.log(average);
+
   return (
     <div className={css.container}>
       <div className={css.upInfo}>
@@ -10,19 +12,29 @@ export default function ReviewItem({ reviewInfo }) {
           <p className={css.name}>{reviewInfo.reviewer_name}</p>
 
           <div className={css.ratingContainer}>
-            <svg className={`${css.ratingIcon} ${average >= 1 || css.active}`}>
+            <svg
+              className={`${css.ratingIcon} ${average > 0 ? css.active : ""}`}
+            >
               <use href={"/sprite.svg#rating"}></use>
             </svg>
-            <svg className={`${css.ratingIcon} ${average >= 2 || css.active}`}>
+            <svg
+              className={`${css.ratingIcon} ${average > 1 ? css.active : ""}`}
+            >
               <use href={"/sprite.svg#rating"}></use>
             </svg>
-            <svg className={`${css.ratingIcon} ${average >= 3 || css.active}`}>
+            <svg
+              className={`${css.ratingIcon} ${average > 2 ? css.active : ""}`}
+            >
               <use href={"/sprite.svg#rating"}></use>
             </svg>
-            <svg className={`${css.ratingIcon} ${average >= 4 || css.active}`}>
+            <svg
+              className={`${css.ratingIcon} ${average > 3 ? css.active : ""}`}
+            >
               <use href={"/sprite.svg#rating"}></use>
             </svg>
-            <svg className={`${css.ratingIcon} ${average >= 5 || css.active}`}>
+            <svg
+              className={`${css.ratingIcon} ${average > 4 ? css.active : ""}`}
+            >
               <use href={"/sprite.svg#rating"}></use>
             </svg>
           </div>
