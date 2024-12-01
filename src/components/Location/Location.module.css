@@ -1,0 +1,56 @@
+.title {
+  color: var(--gray);
+  font-size: 16px;
+}
+
+.select {
+  border: none;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+  padding: 16px 0;
+  cursor: pointer;
+}
+
+.select:hover,
+.select:active,
+.select:focus {
+  outline: none;
+  border: none;
+}
+
+.option {
+  background-color: var(--inputs);
+  color: var(--main);
+  margin-left: 10px;
+}
+
+.locationIcon {
+  fill: var(--main);
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.content {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background-color: var(--inputs);
+  max-width: 320px;
+  border-radius: 20px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 360px;
+  }
+}
+
+.disabled {
+  color: var(--gray);
+  fill: var(--gray);
+}

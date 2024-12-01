@@ -1,0 +1,94 @@
+.container {
+  padding: 44px 57px;
+  border: 1px solid var(--gray-light);
+  border-radius: 18px;
+  width: 100%;
+  max-width: 631px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.subtitle {
+  color: var(--gray);
+  margin-top: 8px;
+}
+
+.form {
+  margin-top: 24px;
+}
+
+.input {
+  background-color: var(--inputs);
+  border-radius: 12px;
+  padding: 18px;
+  width: 100%;
+  border: 1px solid transparent;
+}
+
+.input:hover,
+.input:focus,
+.input:active {
+  border-color: var(--rating);
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.inputContainer:not(:first-child) {
+  margin-top: 14px;
+}
+
+.input::placeholder {
+  font-weight: 500;
+  color: var(--gray);
+}
+
+.textarea {
+  min-height: 118px;
+}
+
+.button {
+  padding: 16px 63px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 24px;
+}
+
+.errorWrapper {
+  position: absolute;
+  top: -18px;
+  left: 5px;
+  width: 100%;
+}
+
+.error {
+  color: var(--button);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.datepicker {
+  width: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.customPopper {
+  border-radius: 4px;
+}
+
+.dataInput {
+  display: inline;
+  /* width: 631px; */
+}

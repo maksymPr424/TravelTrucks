@@ -1,0 +1,73 @@
+.upInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+  }
+}
+
+.title,
+.price {
+  font-size: 18px;
+  font-weight: 600;
+
+  @media screen and (min-width: 768px) {
+    font-weight: 700;
+    font-size: 24px;
+  }
+}
+
+.priceContainer {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+
+.icons {
+  width: 26px;
+  height: 24px;
+  fill: var(--main);
+}
+
+.choiceCamper {
+  fill: var(--button-hover);
+}
+
+.ratingIcon {
+  fill: var(--rating);
+}
+
+.locationIcon,
+.ratingIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.downContainer {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.locationContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 16px;
+}
+
+.checkBtn {
+  padding: 0 !important;
+  background-color: transparent !important;
+  border: none;
+  margin: 0 !important;
+}
+
+.checkBtn:hover,
+.checkBtn:active,
+.checkBtn:focus {
+  transform: scale(1.03);
+  background-color: transparent !important;
+}

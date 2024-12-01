@@ -1,0 +1,33 @@
+.title {
+  font-size: 20px;
+  position: relative;
+  font-weight: 700;
+}
+
+.title::before {
+  position: absolute;
+  content: "";
+  bottom: -24px;
+  width: 100%;
+  left: 0;
+  height: 1px;
+  background-color: var(--gray-light);
+}
+
+.list {
+  margin-top: 48px;
+}
+
+.text {
+  font-weight: 600;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item:not(:first-child) {
+  margin-top: 16px;
+}
