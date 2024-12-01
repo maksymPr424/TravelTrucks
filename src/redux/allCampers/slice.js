@@ -22,8 +22,6 @@ const campersSlice = createSlice({
       .addCase(getCampers.fulfilled, (state, action) => {
         const currentPage = action.payload.page;
 
-        console.log(action.payload);
-
         if (currentPage === 1) {
           state.campers = action.payload.items;
         } else {

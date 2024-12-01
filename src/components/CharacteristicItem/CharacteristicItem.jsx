@@ -26,7 +26,6 @@ export default function CharacteristicItem({ characteristics }) {
 
     return firstLetterUpper(characteristics[0]);
   };
-  console.log(getName());
 
   return (
     <div className={css.container}>

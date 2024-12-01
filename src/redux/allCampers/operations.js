@@ -52,7 +52,6 @@ export const getCampers = createAsyncThunk(
           `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
       )
       .join("&");
-    console.log(`/campers?${params}&${queryString}`);
 
     try {
       const res = await axios(`/campers?&${params}&${queryString}`);
