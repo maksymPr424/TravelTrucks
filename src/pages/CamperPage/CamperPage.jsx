@@ -23,66 +23,72 @@ export default function CamperPage() {
   const isError = useSelector(selectIsError);
 
   useEffect(() => {
-    dispatch(getCamperById(id));
+    const fetchCamper = async () => {
+      await dispatch(getCamperById(id));
+    };
+    fetchCamper();
   }, [dispatch, id]);
 
   const camper = useSelector(selectCurrentCamper);
 
-  const { name, price, rating, reviews, location, gallery, description } =
-    camper;
+  const {
+    name = "",
+    price = 0,
+    rating = 0,
+    reviews = [],
+    location = "",
+    gallery = [],
+    description = "",
+  } = camper;
 
   const getIsACtiveRoute = (name) => pathname.includes(name);
 
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (isError) {
+    return <NotFound>Not found camper</NotFound>;
+  }
+
   return (
-    <>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <>
-          {isError ? (
-            <NotFound>Not found camper</NotFound>
-          ) : (
-            <div className={`container ${css.container}`}>
-              <div className={css.upInfo}>
-                <BaseInfo
-                  title={name}
-                  rating={rating}
-                  reviews={reviews.length}
-                  location={location}
-                />
-                <p className={css.price}>€{price}</p>
-              </div>
-              <Gallery gallery={gallery} />
-              <p className={css.description}>{description}</p>
+    <div className={`container ${css.container}`}>
+      <div className={css.upInfo}>
+        <BaseInfo
+          title={name}
+          rating={rating}
+          reviews={reviews.length}
+          location={location}
+        />
+        <p className={css.price}>€{price}</p>
+      </div>
+      <Gallery gallery={gallery} />
+      <p className={css.description}>{description}</p>
 
-              <div className={css.moreInfoLinks}>
-                <NavLink
-                  to="features"
-                  className={`${css.link} ${
-                    !getIsACtiveRoute("features") || css.activeRoute
-                  }`}
-                >
-                  Features
-                </NavLink>
-                <NavLink
-                  to="reviews"
-                  className={`${css.link} ${
-                    !getIsACtiveRoute("reviews") || css.activeRoute
-                  }`}
-                >
-                  Reviews
-                </NavLink>
-              </div>
+      <div className={css.moreInfoLinks}>
+        <NavLink
+          to="features"
+          className={`${css.link} ${
+            !getIsACtiveRoute("features") || css.activeRoute
+          }`}
+        >
+          Features
+        </NavLink>
+        <NavLink
+          to="reviews"
+          className={`${css.link} ${
+            !getIsACtiveRoute("reviews") || css.activeRoute
+          }`}
+        >
+          Reviews
+        </NavLink>
+      </div>
 
-              <div className={css.outlet}>
-                <Suspense fallback={<Loader />}>
-                  <Outlet />
-                </Suspense>
-              </div>
-            </div>
-          )}
-        </>
-      )}
-    </>
+      <div className={css.outlet}>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </div>
+    </div>
   );
 }
