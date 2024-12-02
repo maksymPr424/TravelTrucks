@@ -8,7 +8,7 @@ export default function Characteristics({ characteristics, maxThree }) {
   return (
     <ul className={`${css.characteristics} ${!maxThree || css.maxThree}`}>
       {Object.entries(characteristics).map((item, index) => (
-        <div key={index}>
+        <div key={index} className={item[1] || css.disable}>
           {!item[1] || (
             <li key={index} className={`${css.item} ${!id || css.features}`}>
               <CharacteristicItem characteristics={item} />

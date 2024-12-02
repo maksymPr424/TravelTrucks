@@ -18,3 +18,7 @@
 .features {
   background-color: var(--gray-light);
 }
+
+.disable {
+  display: none;
+}

@@ -40,11 +40,17 @@ export const getCampers = createAsyncThunk(
         return acc;
       }, {}),
       ...filters.typeFilters.reduce((acc, item) => {
-        acc["form"] = item === "van" ? "panelTruck" : item;
+        acc["form"] =
+          item === "Van"
+            ? "panelTruck"
+            : item === "Fully Integrated"
+            ? "fullyIntegrated"
+            : item.toLowerCase();
         return acc;
       }, {}),
       location: filters.location || "",
     };
+    console.log(queryParams);
 
     const queryString = Object.entries(queryParams)
       .map(

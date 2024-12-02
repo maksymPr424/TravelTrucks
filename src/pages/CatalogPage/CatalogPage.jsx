@@ -3,12 +3,15 @@ import css from "./CatalogPage.module.css";
 import equipment from "../../../equipment.json";
 import typeFiltersArr from "../../../typeFilters.json";
 import RenderFilters from "../../components/RenderFilters/RenderFilters";
+import cities from "../../../cities.json";
+
 import Button from "../../components/Button/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { setEquipmentFilters, setTypeFilters } from "../../redux/filters/slice";
 import {
   selectAllFilters,
   selectEquipmentFilters,
+  selectLocation,
   selectTypeFilters,
 } from "../../redux/filters/selectors";
 import { getCampers } from "../../redux/allCampers/operations";
@@ -26,6 +29,7 @@ import NotFound from "../../components/NotFound/NotFound";
 export default function CatalogPage() {
   const activeEquipmentFilters = useSelector(selectEquipmentFilters);
   const activeTypeFilters = useSelector(selectTypeFilters);
+  const currentLocation = useSelector(selectLocation);
 
   const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectIsError);
@@ -45,7 +49,14 @@ export default function CatalogPage() {
   return (
     <div className={`container ${css.container}`}>
       <div className={css.leftContainer}>
-        <Location />
+        <div className={css.locationContainer}>
+          <Location />
+          {cities.includes(currentLocation) || (
+            <span className={css.locationError}>
+              Please type a correct city
+            </span>
+          )}
+        </div>
         <p className={css.filters}>Filters</p>
         <div className={css.filtersContainer}>
           <RenderFilters
@@ -120,7 +131,11 @@ export default function CatalogPage() {
               ) : (
                 campersTotal <= currentPage * 5 || (
                   <li>
-                    <Button onClick={getCampers} credentials={currentPage} styles={css.button}>
+                    <Button
+                      onClick={getCampers}
+                      credentials={currentPage}
+                      styles={css.button}
+                    >
                       Load More
                     </Button>
                   </li>

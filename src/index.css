@@ -19,12 +19,15 @@
   overflow: hidden;
 }
 
-@font-face {
-  font-family: Inter;
-  src: url(./fonts/Inter-Italic-VariableFont_opsz\wght.ttf);
-}
+/* @font-face {
+  font-family: "Inter", sans-serif;
+  src: url(./fonts/Inter-VariableFont_opsz\wght.ttf) format("truetype");
+  font-style: normal;
+
+} */
 
 :root {
+  font-family: "Inter", sans-serif;
   --main: #101828;
   --text: #475467;
   --gray: #6c717b;
@@ -38,7 +41,7 @@
 }
 
 * {
-  font-family: Inter sans-serif;
+  font-family: "Inter" sans-serif;
   padding: 0px;
   margin: 0px;
   border: none;

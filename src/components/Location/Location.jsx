@@ -1,4 +1,3 @@
-import cities from "../../../cities.json";
 import css from "./Location.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLocation } from "../../redux/filters/selectors";
@@ -11,6 +10,7 @@ export default function Location() {
 
   const handleChange = (e) => {
     const targetLocation = e.target.value;
+
     dispatch(setLocation(targetLocation));
   };
 
@@ -23,19 +23,14 @@ export default function Location() {
         >
           <use href="/sprite.svg#icon-location"></use>
         </svg>
-        <select
+        <input
           className={`${css.select} ${locationFromState || css.disabled}`}
           name="location"
           id="location"
           value={locationFromState}
           onChange={handleChange}
-        >
-          {cities.map((item, index) => (
-            <option className={css.option} value={item} key={index}>
-              {item ? `Ukraine, ${item}` : "City"}
-            </option>
-          ))}
-        </select>
+          placeholder="City"
+        />
       </div>
     </div>
   );

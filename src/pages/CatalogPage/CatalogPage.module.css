@@ -77,3 +77,14 @@
 .button:focus {
   border: 1px solid var(--button);
 }
+
+.locationContainer {
+  position: relative;
+}
+
+.locationError {
+  position: absolute;
+  bottom: -10px;
+  left: 16px;
+  color: var(--button);
+}
